@@ -33,9 +33,10 @@ int main(int argc, char *argv[]) {
     memset(addr, 0, MEM_SIZE); /*Zero out region*/
     strncpy(addr, newVal, MEM_SIZE - 1);
 
-    if (msync(addr, MEM_SIZE, MS_ASYNC) == -1) {
+    if (msync(addr, MEM_SIZE, MS_ASYNC) == -1) { /*类似于 fsync 和 storage 同步*/
         errExit("msync");
     }
+
 
     printf("Copied Success\n");
     return 0;
