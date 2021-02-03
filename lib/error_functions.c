@@ -147,5 +147,16 @@ void cmdLineErr(const char *format, ...) {
     exit(EXIT_FAILURE);
 }
 
+void
+fatal(const char *format, ...) {
+    va_list argList;
+
+    va_start(argList, format);
+    outputError(FALSE, 0, TRUE, format, argList);
+    va_end(argList);
+
+    terminate(TRUE);
+}
+
 
 
