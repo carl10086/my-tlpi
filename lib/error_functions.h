@@ -24,4 +24,6 @@ void errExit(const char *format, ...) NORETURN;
 
 void cmdLineErr(const char *format, ...) NORETURN;
 
+void fatal(const char *format, ...) NORETURN;
+
 #endif //HELLO_ERROR_FUNCTIONS_H
